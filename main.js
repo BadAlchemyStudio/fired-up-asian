@@ -45,16 +45,15 @@ const highlightMenu = () => {
         servicesMenu.classList.remove("highlight");
         Menu.classList.remove("highlight");
         Home.classList.remove("highlight");
-        return;
     }
 
-    if ((hl && window.innerWidth < 960 && scrollPos < 600) || hl) {
-        hl.classList.remove("highlight");
-    }
+    // if ((hl && window.innerWidth < 960 && scrollPos < 600) || hl) {
+    //     hl.classList.remove("highlight");
+    // }
 
-    if ((hlBtn && window.innerWidth < 960 && scrollPos < 600) || hlBtn) {
-        hlBtn.classList.remove("highlight-order-button");
-    }
+    // if ((hlBtn && window.innerWidth < 960 && scrollPos < 600) || hlBtn) {
+    //     hlBtn.classList.remove("highlight-order-button");
+    // }
 
 }
 

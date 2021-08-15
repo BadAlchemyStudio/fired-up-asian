@@ -1,0 +1,684 @@
+import { capitalizeString } from "./strFunctions.js";
+
+var number = 5;
+// test.
+/* test */
+
+// Data Types (object is k,v in pairs.)
+/* undefined, null, boolean, string, symbol, number and object. */
+
+// String:
+var myName = "James";
+
+// "var" can be dynamically changed from type to type. 
+myName = 6;
+
+// Can be used throughout entire doc
+var something = 22;
+ 
+// Can only be used within local brackets.
+let ourName = "anything here";
+
+// It's a datatype that cannot change var type or data values. It's locked.
+const someName = 3535;
+
+var a = 3;
+var c = 11;
+
+var b;
+
+b = (a + c);
+
+
+//Quotes inside of quotes
+var myStr = 'single quotes are on the "outside", and doubles "inside"';
+
+
+//Code output w/ shorthand
+/*
+\' single quote
+\" double quote
+\\ backslash
+\n new line
+\r carriage return
+\t tab
+\b backspace
+\f form feed
+*/
+
+//3 different lines in consolelog
+var crazyString = "FirstLine\nSecondLine\nThirdLine";
+
+
+// Cancatonation
+var subString = "I want to add this string to" + "This string";
+
+// The += operator also works for concatinated strings.
+
+var fancyStr = "Something to say is: ";
+fancyStr += "CONTATINATION!"
+
+// We can work with strings just like we're used to. Get LENGTH.
+
+var numFancyChars = fancyStr.length; // returns int
+
+// Each char in string can be indexed. Table, so start at 0, array style.
+// Get 3rd letting in fancyStr
+
+var thirdChar = fancyStr[2]; //Remember, starts at 0, so 2 = 3rd char.
+
+//Strings are Immutable. Can't directly change index value in a string.
+
+var hiStr = "Jello World";
+
+//hiStr[0] = H; // This isn't supposed to work, instead we do:
+
+fancyStr = "Hello World";
+
+// To get last chars in string, or really last index in any array.
+
+var lastHiStr = hiStr[hiStr.length - 1];
+
+//----OLD FUNCTION FROM C#-----\\ (STILL WORKS GREAT!)
+
+// This is how functions work.. again, lol. not new stuff yet. 
+function wordBlanksOld(rInt, rName) {
+    if (rInt != null && rName != null) {
+        //console.log("My name is " + rName + ", and I am " + rInt + " years old!");
+    }
+}
+
+wordBlanksOld(3, "Tyler");
+
+//-----END OF C# FUNC-----\\
+
+
+//----NEW WAY JS FUNC-----\\
+
+// This is how functions work.. again, lol. not new stuff yet. 
+function wordBlanksNew(rInt, rName) {
+    if (rInt != null && rName != null) {
+        var result = "";
+        result += "My name is " + rName + ", and I am " + rInt + " years old!";
+        return result;
+    }
+}
+
+//console.log(wordBlanksNew(7, "Jimmy"));
+
+//-----END OF NEW JS FUNC-----\\
+
+
+//Arrays, These can have any value types in them. We no longer have to have int array or str array. One array will do everything.
+
+var someArray = ["Element", 43, "IndexMe"]
+
+//While we can't do this with chars in a string array, we can directly modify index values for all NON-STRING arrays.
+
+var intArray = [11, 42, 44];
+intArray[1] = 23; // 11, 23, 44 now.
+
+// Nested arrays are also a thing. Arrays in arrays.
+var outsideArray = [[32, 1, 4], ["Hello", "World"]];
+
+// To index those nested array indexes, we can do this. Let's get the 3rd index in first array.
+var thirdVal = outsideArray[0][2]; // Gives us 4.
+
+// NEW! We can add a value to an array and push it to the end with this line of code:
+var pushyArray = [0, 1, 2, 3];
+pushyArray.push(4);
+//console.log(JSON.stringify(pushyArray));
+
+// NEW! We can remove the last value from an array AND save to var in a single line.
+var popArray = [4, 6, 8];
+var poppedVal = popArray.pop(); // New we have popArray = [4, 6] and poppedVal = 8. Ez.
+
+// NEW! Shift does the SAME thing as pop, but its the first value instead of the last.
+var shiftArray = [5, 6, 7];
+var shiftedVal = shiftArray.shift(); // [6, 7] shiftedVal = 5.
+
+// NEW! Unshift adds element to FRONT of array.
+shiftArray.unshift(33); // now = [33, 6, 7].
+
+
+/* PROTIP-- -- --JSON.stringify(arraygoeshere); will give us a ToString version of the array, for //console.log. */
+// Here we make a function to add item to end of array and them //console.log it
+function nextInLine(arr, item) {
+    
+    arr.push(item);
+    return item;
+}
+
+var testArr = [1, 2, 3, 4, 5];
+
+//console.log("B: " + JSON.stringify(testArr));
+//console.log(nextInLine(testArr, 6));
+//console.log("A: " + JSON.stringify(testArr));
+
+
+// NEW! String Evaluation operator.
+
+// We are used to doing
+var randomNoomber = 3;
+var stringNoomber = "3";
+if (randomNoomber == stringNoomber) {
+    // This will try to compare both values regardless of data type. Exmapl
+    // true
+}
+
+if (randomNoomber === stringNoomber) {
+    // This will compare the value AND the data type.
+    // false
+}
+
+//Can also do not checks
+
+if (randomNoomber !== stringNoomber) {
+
+}
+
+
+// Let's learn SWITCH statements finally. replaces nested If statements.
+
+function SwitchFunc(ourVal) {
+    var answer = "";
+    switch(ourVal) {
+        case 1:
+        case 2:
+        case 3:
+            answer = "low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "high";
+            break;
+    }
+    return answer;
+}
+
+//console.log(SwitchFunc(5));
+
+function SwitchFunc2(ourChar) {
+    var answer = "";
+    switch(ourChar) {
+        case "a":
+            answer = "alpha";
+            break;
+        case "b":
+            answer = "bravo";
+            break;
+        case "c":
+            answer = "charlie";
+            break;
+        case "d":
+            answer = "delta";
+            break;
+        default: // "Else.."
+            answer = "Letter was entered that is outside of abcd.."
+    }
+    return answer;
+}
+
+//console.log(SwitchFunc2("d"));
+
+// OBJECTS!!!
+
+// Property: Value.
+
+var ourObj = {
+    "color": "Red",
+    "Holes": 1,
+    "isStolen": false
+};
+
+//how to reference with object.property
+var isObjectStolen = ourObj.isStolen;
+var howManyHoles = ourObj.Holes;
+
+//how to reference with object[] "index...?"
+var objColor = ourObj["color"];
+
+// Modify object properties
+ourObj.color = "Blue";
+
+//Completely delete entire property from object
+delete ourObj.Holes;
+
+//We can check to see if an object HAS a certain property.
+function someFunc() {
+    if (ourObj.hasOwnProperty("color")) { // <--------------------- Intellisense didn't autofill the hasOwnProperty.
+        //console.log("has prop.");
+    }
+}
+
+// Objects can be in array form. 2 obj in 1
+var ourObjArr = [
+    {
+        color: "Red",
+        Holes: 1,
+        isStolen: false
+    },
+    {
+        color: "Pink",
+        Holes: 3,
+        isStolen: true
+    }
+]
+
+//Objects inside of non-array objects.
+
+var nestObj = {
+    "house": {
+        "bathroom": {
+            "toilet": true,
+            "sink": false
+        },
+        "bedroom": {
+            "bedColor": "Orange"
+        }
+    }
+}
+
+// How do we access nested object properties? Like so.
+var bathroomHasToilet = nestObj.house.bathroom.toilet;
+//console.log(bathroomHasToilet);
+
+
+// Record Collections + Updating
+
+var col = {
+    
+    "1": {
+        "a": "alpha",
+        "b": "bravo",
+        "c": "charlie",
+        "d": "delta",
+        "e": [
+            "echo",
+            "eugene"
+        ]
+    },
+    "2": {
+        "a": "alpha",
+        "b": "bravo",
+        "e": [
+            "echo",
+            "eugene"
+        ]
+    },
+    "3": {
+        "a": "alpha",
+        "b": "bravo",
+        "d": "delta",
+        "e": [
+            "echo",
+            "eugene"
+        ]
+    },
+    "4": {
+        "a": "alpha",
+        "b": "bravo",
+        "c": "charlie",
+    },
+};
+
+var colCopy = JSON.parse(JSON.stringify(col));
+
+function updateRec(id, prop, val) {
+
+    if (val === "") {
+        delete col[id][prop]; // Deletes prop on empty val.
+    } else if (prop === "e") {
+        col[id][prop] = col[id][prop] || []; // short hand. Easy way to create array property if it doesnt exist already.
+        col[id][prop].push(val); // adds new val to end of prop list.
+    } else {
+        col[id][prop] = val;
+    }
+
+
+    return col;
+}
+
+// loops
+
+//while
+var loopArr = [];
+
+var i = 0;
+while (i < 5) {
+    loopArr.push(i);
+    i++;
+}
+
+//for
+
+var forArr = [];
+
+for (var i = 0; i < 5; i++) {
+    forArr.push(i);
+}
+
+//iterate through array
+var randoArr = [3, 5, 7, 1, 2];
+var ourTotal = 0;
+
+for (var i = 0; i < randoArr.length; i++) {
+    ourTotal += randoArr[i];
+}
+
+
+//do + while
+function containingFunc() {
+    do { //The benefit of do while, is that it -WILL- run the first time. ALWAYS at least once. then AFTER that it checks condition before running      again.
+       // Do something
+    } while (i < 5)
+}
+
+
+// MATH
+
+// Decimal
+Math.random(); // returns random val between 0 and 1. 
+
+// Int
+Math.floor(Math.random() * 50); // This ex gives us random number between 0 and 49. (because math.random can never return 1. 0.99999~ max.)
+
+// Random Int Given Range 
+function rInt(ourMin, ourMax) {
+
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+
+var r = rInt(55, 59);
+
+
+// String to Int.
+function cToInt(str) {
+
+    return parseInt(str);
+}
+
+//Binary to Int
+
+function binToInt(str) {
+
+    return parseInt(str, 2) // <---  "Base 2" is binary. Regular every day computation happens at Base 10 by default.
+}
+binToInt("10011");
+
+
+// TERNARY OPERATOR. 1-line if/else operation.
+function checkEqual(a, b) {
+    return a === b ? true : false;
+    // Condition ? if true do this : if false do this.
+}
+
+// TERNARY ops can be nested like so:
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "it's zero."; // Checks if it's positive, if not, check if neg or zero. return.
+}
+//console.log(checkSign(0));
+
+
+// Freeze objects to prevent read-only data from being mutated.
+const secretNum = "33";
+
+Object.freeze(secretNum);
+
+// Const is already read only, but can still be modified by indexing values and changing them via bracket notation obj[1] = 34; etc.
+// Object.freeze() ensures it stays as its originally declared value. Truly read-only.
+
+
+// Anonymous Functions
+
+var anonFunc = function() {
+    return new Date();
+};
+
+// Anon functions can be condensed to arrow functions. (more compact). This is the same as the example above.
+
+const anonFuncShortened = () => new Date();
+
+
+// Ex 2: Anon func to arrow func (Exact same functionality.)
+var secondAnon = function(arr1, arr2) {
+    return arr1.concat(arr2);
+}; // <------ must have ; for anon functions.
+
+// Condensed to arrow func.
+const secondAnonArrow = (arr1, arr2) => arr1.concat(arr2);
+
+// Rest operator ...
+// This operator takes all incoming values and adds them to a new array.
+// This is good because we don't have to have a finite number of args that are preset. With ... operator we can send any number of args.
+
+function sum(...restedArgs) {
+    return restedArgs.reduce((a, b) => a + b, 0);
+}
+
+//console.log(2, 5, 4, 1);
+
+// OLD WAY OF BREAKING DOWN OBJECT VALUES:
+
+var voxel = {x: 3, y: 1, z: 31}; // Our object.
+var vx = voxel.x;
+var vy = voxel.y;
+var vz = voxel.z;
+// While this works, it's not compact at all. Here's what we do instead to achieve the same thing:
+
+var { vx : a, vy : b, vz : c } = voxel; // Nice and clean.
+
+
+// Same thing, just dif example:
+
+const AVG_TEMPS = {
+    today: 77.5,
+    tomorrow: 79
+};
+
+function getTemp(avgTemps) {
+    "use strict";
+
+    const { tomorrow : tempOfTomorrow } = avgTemps; // Gets AVG_TEMPS : tomorrow value and assigns it to tempOfTomorrow, we return that.
+
+    return tempOfTomorrow;
+}
+
+
+// Similar example.
+
+const LOCAL_FORECAST = {
+    today: {min: 72, max: 83},
+    tomorrow: {min: 73.3, max: 84.6}
+};
+
+function getMaxOfTomorrow(forecast) {
+    "use strict";
+
+    const { tomorrow : { max : maxOfTomorrow}} = forecast; // Double de-structure to get value of value in object.
+
+    return maxOfTomorrow;
+}
+
+//console.log(getMaxOfTomorrow(LOCAL_FORECAST));
+
+// destructuring to assign vars from arrays
+
+const [z, x] = [1, 2, 3, 4, 5, 6];
+////console.log(z, x); // This will return (1, 2);.. Because it just grabs those indexes in order.
+// We can also have a small amount of control by doing this:
+const [da, db, , dc] = [1, 2, 3, 4, 5, 6]; // That's right kids, a blank after a comma. Hello JS.
+////console.log(z, x, y); // This will return 1, 2, 4.
+
+
+let dda = 8, ddb = 6; // create vars and assign values.
+(() => { // Weird no-name method thing that I don't understand
+    "use strict"; // no idea what this does.
+    [a, b] = [b, a] // This switches places of two values in an array.
+})();
+
+
+// Destructuring array w/ rest operator
+const src = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(listToRemove) {
+
+    const [, , ...removeArr] = listToRemove; // cleanly remove elements from array w/ rest op.
+
+    return removeArr;
+
+}
+
+const removeArr = removeFirstTwo(src);
+//console.log(removeArr);
+//console.log(src);
+
+// Using destructuring to send object data through functions. (opposed to sending the whole object.)
+
+const plyStats = {
+    HP: 39,
+    STR: 19,
+    FARMING: 43,
+    RUNECRAFTING: 30
+};
+
+const avgPlayerStats = (function() {
+
+    return function({HP, STR}) {
+        return (HP + STR) / 2.0;
+    }
+
+})();
+
+//console.log(avgPlayerStats(plyStats));
+
+//Template literals
+
+const person = {
+    name: "Alex",
+    age: 33
+};
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+//console.log(greeting);
+
+// Object literals
+
+const createPerson = (name, age, gender) => ( {name, age, gender });
+
+//console.log(createPerson("James", 25, "name"));
+
+// Objects can contain functions? i guess.
+
+const bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycle.setGear(3);
+//console.log(bicycle.gear);
+
+
+// Instantiating objects (learning classes)
+// OLD WAY:
+var SpaceShuttle = function(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+// NEW WAY (Class and Constructor)
+class SpaceShuttleClass {
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+
+
+//----- Classes -----\\
+
+class Book {
+    //constructor
+    constructor(author) {
+        this._author = author;
+    }
+    // getter
+    get writer() {
+        return this._author;
+    }
+    //setter 
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor;
+    }
+}
+
+
+function MakeClass() {
+
+    class Thermostat {
+        constructor(temp) {
+            this._temp = 5/9 * (temp - 32);
+        }
+
+        get temperature() {
+            return this._temp;
+        }
+
+        set temperature(updatedTemp) {
+            this._temp = updatedTemp;
+        }
+    }
+
+    return Thermostat;
+
+}
+
+const Thermostat = MakeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature; // This runs the getter in the class.
+thermos.temperature = 26;
+temp = thermos.temperature;
+
+// Importing and exporting (Referecing across files.)
+// import is line 1.
+
+const cap = capitalizeString("hello!") // This method is in the
+
+//console.log(cap);
+
+// If we want to export everything from a useful file, we can do -- import * as JamesTools from "./strFunctions.js";
+
+
+// TEST BUTTON
+const subBtn = document.getElementById("submitBtn");
+subBtn.addEventListener('click', () => {
+    alert('first JS and HTML linkup!');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
