@@ -533,7 +533,6 @@ $lightOrange: rgb(243,201,38);
     #menu-second-col {
         display: none;
     }
-
 }
 
 /* About Section */
@@ -550,7 +549,6 @@ $lightOrange: rgb(243,201,38);
     align-items: center;
     height: 100vh;    
     border-bottom: solid 4px white;
-
 }
 
 .about__wrapper {
@@ -560,20 +558,16 @@ $lightOrange: rgb(243,201,38);
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 95%;
     max-width: 1300px;
-    height: 85%;
-
 }
 
 .about__top {
     display: flex;
-    flex: 1;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     h1 {
-        display: flex;
         color: white;
-        padding: 2rem 1rem ;
         font-size: 6rem;
         text-align: center;
 
@@ -588,13 +582,14 @@ $lightOrange: rgb(243,201,38);
         -moz-text-fill-color: transparent;
         }
     }
+
 }
 
 .about__center {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex: 5;
+    justify-content: center;
+    height: 100%;
     padding: 1rem;
     width: 100%;
 }
@@ -604,8 +599,10 @@ $lightOrange: rgb(243,201,38);
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     flex: 1;
-    margin: 0 2rem;
+    margin: 0 1rem;
+    max-height: 100%;
 }
 
 .about__center__left__top {
@@ -698,7 +695,8 @@ $lightOrange: rgb(243,201,38);
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin: 0 2rem;
+    margin: 0 1rem;
+    max-height: 100%;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
@@ -747,56 +745,6 @@ $lightOrange: rgb(243,201,38);
 
 }
 
-.about__center__right__top__button__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    div {
-        font-size: 1.7rem;
-        padding: 12px 48px;
-        border: solid 1px $midOrange;
-        border-radius: 4px;
-        cursor: pointer;
-        position: relative;
-        white-space: nowrap;
-        transition: all 0.35s ease-in-out;
-        background: linear-gradient(rgba(255, 255, 255, 0), rgba(255,255,255,0.15));
-
-        a {
-        position: relative;
-        z-index: 2;
-        color: white;
-        text-decoration: none;
-        transition: all 0.35s ease-in-out;
-        }
-    }
-}
-
-
-.about__center__right__top__button:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(rgba(255, 145, 0, 0), rgba(255, 153, 0, 0.527));
-    transition: all 0.35s ease-in-out;
-    border-radius: 4px;
-}
-
-.about__center__right__top__button:hover {
-    a {
-        color: white;
-        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
-    }
-    transform: scale(1.1);
-}
-
-.about__center__right__top__button:hover:after {
-    width: 100%;
-}
 
 .about__center__right__bottom {
     display: flex;
@@ -806,6 +754,205 @@ $lightOrange: rgb(243,201,38);
         height: 100%;
         width: 100%;
     }
+}
+
+/* About - Mobile Responsiveness */
+@media screen and (max-width: 1200px) {
+
+
+
+    .about__top {
+        h1 {
+            font-size: 5rem;
+        }
+    }
+
+    .about__center__left__top {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+            height: 160px;
+            width: 160px;
+        }
+
+        div {
+
+            h1 {
+                font-size: 2rem;
+
+            }
+
+            p {
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                word-spacing: -2px;
+                font-size: 0.9rem;
+            
+                span {
+                    color: $lightOrange;
+                    margin: 0 4px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .about__center__left__bottom {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+            height: 160px;
+            width: 160px;
+        }
+
+        div {
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                word-spacing: -2px;
+                font-size: 0.9rem;
+            
+                span {
+                    color: $lightOrange;
+                    margin: 0 4px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .about {
+        height: fit-content;
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .about__wrapper {
+        height: fit-content;    
+    }
+
+    .about__top {
+        h1 {
+            font-size: 4.5rem;
+        }
+    }
+
+    .about__center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 5;
+        padding: 1rem;
+        width: 100%;
+
+        div {
+            display: flex;
+            flex: 1;
+        }
+
+    }
+
+    .about__center__left__top {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+            height: 160px;
+            width: 160px;
+        }
+
+        div {
+
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            h1 {
+                font-size: 2.2rem;
+
+            }
+
+            p {
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                word-spacing: -2px;
+                font-size: 0.9rem;
+            
+                span {
+                    color: $lightOrange;
+                    margin: 0 4px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .about__center__left__bottom {
+
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+            height: 160px;
+            width: 160px;
+        }
+
+        div {
+
+            
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            h1 {
+                font-size: 2.2rem;
+
+            }
+
+            p {
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                word-spacing: -2px;
+                font-size: 0.9rem;
+            
+                span {
+                    color: $lightOrange;
+                    margin: 0 4px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .about {
+        height: fit-content;
+        padding: 2rem 0;
+    }
+
 }
 
 
